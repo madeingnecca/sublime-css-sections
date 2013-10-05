@@ -5,14 +5,14 @@ import re
 
 class CssSectionsCommand(sublime_plugin.TextCommand):
     def run(self, edit):
-        # @TODO: ensure it's a css/less/sass file.
         sections = []
         quicklist = []
 
+        # @TODO: make regexes configurable.
         regions = self.view.find_all('\* (=+)\s*([^\*]+)$', sublime.IGNORECASE)
         for r in regions:
             line = self.view.substr(self.view.line(r))
-            # find_all only returns one extraction per match,
+            # "find_all" only returns one extraction per match,
             # so we need to re-scan the line.
             match = re.search('(=+)\s*([^\*]+)', line)
             depth = len(match.group(1))
@@ -20,7 +20,7 @@ class CssSectionsCommand(sublime_plugin.TextCommand):
 
             sections.append({'depth': depth, 'name': sect, 'region': r})
 
-            # @TODO: it could be useful to add comments
+            # @TODO: it could be useful to add section comments
             # as a second level of the quicklist.
             quicklist.append('({0}) {1}'.format(depth, sect))
 
