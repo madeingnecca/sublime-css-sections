@@ -1,0 +1,13 @@
+<snippet>
+   <content><![CDATA[
+/**
+ * ==$1
+ -------------------------*/
+
+$2
+
+/** ==END $3 */
+]]></content>
+  <tabTrigger>cssecc</tabTrigger>
+  <scope>source.css</scope>
+</snippet>
