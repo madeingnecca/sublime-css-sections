@@ -1,3 +1,8 @@
 [
-	{ "keys": ["alt+ctrl+r"], "command": "css_sections", "args": {} }
+	{
+		"keys": ["alt+r"], "command": "css_sections", "args": {}, "context":
+		[
+			{ "key": "selector", "operator": "equal", "operand": "source.css,source.sass,source.scss,source.less" }
+		]
+	}
 ]
