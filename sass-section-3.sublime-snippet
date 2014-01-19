@@ -1,0 +1,15 @@
+<snippet>
+   <content><![CDATA[
+//
+// ===${1:third level section}
+// ------------------------- //
+
+$2
+
+// =END ${1:third level section}
+
+]]>
+</content>
+  <tabTrigger>sect3sass</tabTrigger>
+  <scope>source.scss, source.sass</scope>
+</snippet>

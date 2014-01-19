@@ -1,4 +1,3 @@
-import sublime
 import sublime_plugin
 import re
 
@@ -39,14 +38,14 @@ class CssSectionsCommand(sublime_plugin.TextCommand):
         sections = []
         quicklist = []
 
-        # @TODO: make regexes configurable.
-        matching_regions = self.view.find_all('\* (=+)\s*([^\*]+)$', sublime.IGNORECASE)
+        # Match both css and sass comments, skipping "END" delimeters.
+        matching_regions = self.view.find_all('(\*|//) (=+)\s*((?!END).)+$')
 
         for r in matching_regions:
             line = self.view.substr(self.view.line(r))
             # "find_all" only returns one extraction per match,
             # so we need to re-scan the line.
-            match = re.search('(=+)\s*([^\*]+)', line)
+            match = re.search('(=+)\s*(.+)', line)
             depth = len(match.group(1))
             sect = match.group(2)
 

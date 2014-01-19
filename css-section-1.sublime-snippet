@@ -1,12 +1,13 @@
 <snippet>
    <content><![CDATA[
 /**
- * =$1
+ * =${1:first level section}
  -------------------------*/
 
 $2
 
-/** =END $3 */
+/** =END ${1:first level section} */
+
 ]]></content>
   <tabTrigger>sect</tabTrigger>
   <scope>source.css, source.less, source.scss, source.sass, source.stylus, source.styl</scope>

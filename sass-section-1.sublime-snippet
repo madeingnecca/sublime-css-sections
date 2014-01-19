@@ -1,0 +1,14 @@
+<snippet>
+   <content><![CDATA[
+//
+// =${1:first level section}
+// ------------------------- //
+
+$2
+
+// =END ${1:first level section}
+
+]]></content>
+  <tabTrigger>sectsass</tabTrigger>
+  <scope>source.scss, source.sass</scope>
+</snippet>
